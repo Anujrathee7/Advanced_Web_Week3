@@ -11,7 +11,7 @@ type TUser = {name:string,email:string};
 const users: TUser[] = [];
 
 router.get("/users", (req: Request, res: Response) => {
-    res.status(201).json(users);
+    res.status(201).json({users});
 })
 
 router.get('/echo/:id',(req: Request,res: Response)=>{

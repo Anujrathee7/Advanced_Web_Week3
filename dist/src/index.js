@@ -4,7 +4,7 @@ const express_1 = require("express");
 const router = (0, express_1.Router)();
 const users = [];
 router.get("/users", (req, res) => {
-    res.status(201).json(users);
+    res.status(201).json({ users });
 });
 router.get('/echo/:id', (req, res) => {
     const { id } = req.params;

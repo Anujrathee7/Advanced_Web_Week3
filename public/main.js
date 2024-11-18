@@ -18,12 +18,12 @@ document.getElementById("userForm").addEventListener("submit", async (event) => 
 
 document.getElementById("getUsers").addEventListener("click", async () => {
     const response = await fetch("/users");
-    const users = await response.json();
+    const data = await response.json();
 
     const userList = document.getElementById("userList");
     userList.innerHTML = "";
 
-    users.forEach((user) => {
+    data.users.forEach((user) => {
         const li = document.createElement("li");
         li.textContent = `${user.name} - ${user.email}`;
         userList.appendChild(li);

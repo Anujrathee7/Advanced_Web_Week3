@@ -26,6 +26,15 @@ app.post('/sum', (req, res) => {
         res.status(400).json({ error: 'numbers must be an array' });
     }
 });
+const users = [];
+app.post('/users', (req, res) => {
+    const { name, email } = req.body;
+    users.push({ name, email });
+    res.json({ message: "User successfully added" });
+});
+app.get('/users', (req, res) => {
+    res.status(201).json(users);
+});
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

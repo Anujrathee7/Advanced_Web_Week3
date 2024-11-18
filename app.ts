@@ -32,6 +32,22 @@ app.post('/sum', (req, res) => {
     }
   });
 
+
+
+type TUser = {name:string,email:string};
+const users: TUser[] = [];
+
+
+app.post('/users',(req, res) =>{
+    const {name,email} = req.body;
+        users.push({ name, email });
+        res.json({ message: "User successfully added" });
+})
+
+app.get('/users', (req, res) => {
+    res.status(201).json(users);
+  });
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
   });

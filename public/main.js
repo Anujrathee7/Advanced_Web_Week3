@@ -12,6 +12,8 @@ document.getElementById("userForm").addEventListener("submit", async (event) => 
 
     const data = await response.json();
     alert(data.message);
+    
+    document.getElementById("userForm").reset()
 });
 
 document.getElementById("getUsers").addEventListener("click", async () => {

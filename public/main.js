@@ -12,7 +12,7 @@ document.getElementById('userForm').addEventListener('submit', async (e) => {
     alert(result.message);
   });
 
-  
+
   
   document.getElementById('getUsers').addEventListener('click', async () => {
     const response = await fetch('/users');
@@ -26,4 +26,6 @@ document.getElementById('userForm').addEventListener('submit', async (e) => {
       userList.appendChild(li);
     });
   });
+  
+
   

@@ -29,6 +29,9 @@ app.post('/sum', (req, res) => {
 const users = [];
 app.post('/users', (req, res) => {
     const { name, email } = req.body;
+    if (!name || !email) {
+        res.status(400).json({ error: "Name and email are required" });
+    }
     users.push({ name, email });
     res.json({ message: "User successfully added" });
 });
